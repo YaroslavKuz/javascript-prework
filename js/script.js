@@ -1,26 +1,26 @@
 // Функція для отримання назви ходу за його id
 function getMoveName(argMoveId) {
   console.log('wywołano funkcję getMoveName z argumentem: ' + argMoveId);
-  if (argMoveId == 1) {
-      return 'kamień';
-  } else if (argMoveId == 2) {
-      return 'papier';
-  } else if (argMoveId == 3) {
-      return 'nożyce';
+  if (argMoveId === 1) {
+    return 'kamień';
+  } else if (argMoveId === 2) {
+    return 'papier';
+  } else if (argMoveId === 3) {
+    return 'nożyce';
   } else {
-      printMessage('Nie znam ruchu o id ' + argMoveId + '. Zakładam, że chodziło o "kamień".');
-      return 'kamień';
+    printMessage('Nie znam ruchu o id ' + argMoveId + '. Zakładam, że chodziło o "kamień".');
+    return 'kamień';
   }
 }
 
 // Функція для відображення результату гри на сторінці
 function displayResult(argPlayerMove, argComputerMove) {
   console.log('wywołano funkcję displayResults z argumentami: ' + argPlayerMove + ', ' + argComputerMove);
-  if (argPlayerMove == 'papier' && argComputerMove == 'kamień') {
+  if (argPlayerMove === 'papier' && argComputerMove === 'kamień') {
     printMessage('Wygrywasz!');
-  } else if (argPlayerMove == 'nożyce' && argComputerMove == 'kamień') {
+  } else if (argPlayerMove === 'nożyce' && argComputerMove === 'kamień') {
     printMessage(' NIE Wygrywasz!');
-  } else if (argPlayerMove == 'kamień' && argComputerMove == 'kamień') {
+  } else if (argPlayerMove === 'kamień' && argComputerMove === 'kamień') {
     printMessage('chmm... Jeszcze raz ');
   } else {
     printMessage('Przegrywasz :(');
@@ -33,9 +33,9 @@ function buttonClicked(argButtonName) {
   clearMessages(); // Очищаємо попередні повідомлення
   console.log(argButtonName + ' został kliknięty');
   
-  var randomNumber = Math.floor(Math.random() * 3 + 1); // Випадковий хід комп'ютера
-  var computerMove = getMoveName(randomNumber);
-  var playerMove = argButtonName; // Хід гравця
+  const randomNumber = Math.floor(Math.random() * 3 + 1); // Випадковий хід комп'ютера
+  const computerMove = getMoveName(randomNumber);
+  const playerMove = argButtonName; // Хід гравця
 
   console.log('ruch gracza to: ' + playerMove);
   console.log('wylosowana liczba to: ' + randomNumber);
@@ -46,9 +46,9 @@ function buttonClicked(argButtonName) {
 }
 
 // Додаємо слухачі подій на кнопки
-buttonRock = document.getElementById('button-rock');
-buttonPaper = document.getElementById('button-paper');
-buttonScissors = document.getElementById('button-scissors');
+const buttonRock = document.getElementById('button-rock');
+const buttonPaper = document.getElementById('button-paper');
+const buttonScissors = document.getElementById('button-scissors');
 
 // Призначаємо функцію для кожної кнопки
 buttonRock.addEventListener('click', function() {
