@@ -60,3 +60,4 @@ buttonPaper.addEventListener('click', function() {
 buttonScissors.addEventListener('click', function() {
   buttonClicked('nożyce');
 });
+ 
